@@ -1,0 +1,1013 @@
+/* shared colours for the site */
+:root {
+  --teal: #155e63;
+  --cream: #f6f3ea;
+  --orange: #b64900;
+  --ink: #17383a;
+  --pale: #e5efec;
+  --white: #ffffff;
+  --line: #e7e5e4;
+}
+
+/* keep padding and borders inside element sizes */
+* {
+  box-sizing: border-box;
+}
+
+/* use the browser font size so text follows user settings */
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* keep links plain, add styles where needed */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* keep images inside their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* skip straight to the page content. show this link when it gets focus */
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 0.5rem;
+  z-index: 10;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* centre the page and limit its width */
+.site {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+.site-header,
+.site-footer,
+main > section,
+.contact-view > section {
+  padding: 1.25rem;
+}
+
+/* let the menu move to a new row on small screens */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+}
+
+/* logo and name in the header and footer */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+/* menu links wrap on small screens. */
+.site-nav {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+/* highlight the current page and links under the pointer */
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--orange);
+}
+
+/* shared button styles, colours are set below */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+/* orange button for the main action */
+.btn-primary {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+/* outline button for other actions */
+.btn-secondary {
+  border: 0.125rem solid var(--teal);
+  background-color: transparent;
+}
+
+/* teal button for sending forms and confirming scans */
+.btn-solid {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+/* stack these sections on small screens */
+.hero,
+.scan-layout,
+.results-grid,
+.feature-grid,
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* home banner, text above the photo on small screens */
+.hero {
+  background-color: var(--pale);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.hero-copy {
+  padding: 1.5rem;
+}
+
+/* small label above a heading */
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 0.75rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+/* resize the main heading to fit the screen */
+h1 {
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 3rem);
+  color: var(--teal);
+}
+
+h2 {
+  font-size: 1.35rem;
+  color: var(--teal);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* show teal while the banner photo loads */
+.hero-visual {
+  min-height: 14rem;
+  background-color: var(--teal);
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
+}
+
+/* shared styles for cards and panels */
+.search-box,
+.confirm-panel,
+.result-card,
+.feature-card,
+.camera-panel {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.search-box {
+  background-color: var(--cream);
+}
+
+/* label above the search box */
+.search-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* stack the search box and button on small screens */
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.search-row input {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.1rem;
+}
+
+.search-row input:focus {
+  outline: 0.125rem solid var(--teal);
+  outline-offset: 0.125rem;
+}
+
+.search-hint {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* stack search suggestions and scanned items */
+.chip-row,
+.additive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chip,
+.additive-item {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.feature-card {
+  background-color: var(--cream);
+  border: 0;
+}
+
+/* icon at the top of each feature card */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  background-color: var(--pale);
+  color: var(--teal);
+  margin-bottom: 1rem;
+}
+
+.icon i {
+  font-size: 1.25rem;
+}
+
+/* intro above the camera and scan results */
+.scan-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* bars showing the current scan step */
+.scan-steps {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scan-step {
+  width: 3rem;
+  height: 0.5rem;
+  border-radius: 999rem;
+  background-color: var(--line);
+}
+
+.scan-step.is-active {
+  background-color: var(--teal);
+}
+
+/* dark background for the camera preview */
+.camera-panel {
+  background-color: var(--teal);
+  color: var(--white);
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.camera-frame {
+  position: relative;
+  min-height: 20rem;
+  border: 0.125rem solid var(--white);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.camera-frame video {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* show this message until the camera starts */
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.camera-overlay[hidden] {
+  display: none;
+}
+
+.camera-overlay p {
+  margin: 0;
+  background-color: var(--white);
+  color: var(--teal);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1.25rem;
+}
+
+/* put camera and confirm buttons side by side, with equal widths */
+.camera-actions,
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.camera-actions .btn,
+.confirm-actions .btn {
+  flex: 1;
+  min-height: 3.5rem;
+}
+
+.btn-camera-cancel,
+.btn-camera-capture {
+  border-radius: 0.25rem;
+}
+
+.btn-camera-cancel {
+  background-color: var(--white);
+  color: var(--teal);
+}
+
+.btn-camera-capture {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+/* panel showing what the scan found */
+.confirm-panel {
+  background-color: var(--cream);
+}
+
+.confirm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-head h2 {
+  margin: 0;
+}
+
+/* scanned item with an icon, name, note and status */
+.additive-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  background-color: var(--white);
+  color: var(--teal);
+}
+
+.item-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.2rem;
+}
+
+/* keep the note label visible while typing */
+.confirm-note-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+/* optional note to save with a scan */
+.confirm-note {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  background-color: var(--white);
+  font: inherit;
+}
+
+/* saved items with a name and status */
+.saved-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.saved-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background-color: var(--cream);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.saved-name {
+  font-weight: 700;
+}
+
+/* small label for an item type or status */
+.tag {
+  font-size: 0.8rem;
+  background-color: var(--pale);
+  color: var(--teal);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.7rem;
+  width: fit-content;
+}
+
+.result-card .tag {
+  margin-bottom: 1rem;
+}
+
+/* footer links and details, stacked on small screens */
+.site-footer {
+  border-top: 0.0625rem solid var(--line);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0 0 0.5rem;
+}
+
+/* let the table scroll sideways on small screens. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.compare-table caption {
+  text-align: left;
+  font-weight: 700;
+  color: var(--teal);
+  background-color: var(--pale);
+  padding: 0.75rem 1rem;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 0.0625rem solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.compare-table thead th {
+  background-color: var(--cream);
+  color: var(--teal);
+}
+
+.compare-table tbody tr:nth-child(even) {
+  background-color: var(--pale);
+}
+
+/* hide text from view, keep it available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* stack the contact form and extra details on small screens */
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form {
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.contact-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.contact-form fieldset:last-of-type {
+  margin-bottom: 0;
+}
+
+.contact-form legend {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teal);
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+/* one column for form fields on small screens */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-form fieldset > .field {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form fieldset > .field:last-child {
+  margin-bottom: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label,
+.field-legend {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background-color: var(--white);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 0.125rem solid var(--teal);
+  outline-offset: 0.125rem;
+}
+
+.field textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.field-hint {
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+/* leave room around choices so they are easy to tap */
+.choice-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.choice-group-inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.choice-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.choice-group input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+/* stack the form buttons on small screens */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.form-actions .btn {
+  min-height: 3.5rem;
+}
+
+.contact-aside {
+  background-color: var(--teal);
+  color: var(--white);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+}
+
+.contact-aside h2 {
+  color: var(--white);
+}
+
+.contact-aside p:last-child {
+  margin-bottom: 0;
+}
+
+/* use rows and columns on wider screens */
+@media (min-width: 48rem) {
+  .site-header,
+  .site-footer,
+  main > section,
+  .contact-view > section {
+    padding: 1.5rem 2.5rem;
+  }
+
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-nav {
+    display: flex;
+    order: 0;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .scan-intro {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .hero,
+  .scan-layout,
+  .footer-grid,
+  .contact-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  /* give the contact form more room than the extra details */
+  .contact-form {
+    flex: 3;
+  }
+
+  .contact-sidebar {
+    flex: 2;
+  }
+
+  /* use two columns for form fields */
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-actions {
+    flex-direction: row;
+  }
+
+  .camera-frame,
+  .camera-frame video {
+    min-height: 32.5rem;
+    height: 32.5rem;
+  }
+
+  .hero-copy {
+    width: 50%;
+    padding: 3rem;
+  }
+
+  .hero-visual {
+    width: 50%;
+    min-height: 22rem;
+  }
+
+  .hero-visual img {
+    min-height: 22rem;
+  }
+
+  .hero-actions,
+  .search-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .search-row input {
+    flex: 1;
+  }
+
+  /* show cards in three columns */
+  .feature-grid,
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .scan-layout > * {
+    width: 50%;
+  }
+
+  .footer-grid > * {
+    width: 25%;
+  }
+}
+
+/* add more space on large screens */
+@media (min-width: 64rem) {
+  .site {
+    max-width: 80rem;
+  }
+
+  .site-header,
+  .site-footer,
+  main > section,
+  .contact-view > section {
+    padding: 2rem 3rem;
+  }
+
+  .hero-copy {
+    width: 45%;
+    padding: 4rem;
+  }
+
+  .hero-visual {
+    width: 55%;
+  }
+
+  .feature-grid,
+  .results-grid {
+    gap: 2rem;
+  }
+
+  .compare-table {
+    font-size: 1rem;
+  }
+}
+
+/* form messages and styles to make the site easier to use */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 0.125rem solid var(--orange);
+  outline-offset: 0.2rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.btn {
+  line-height: 1.3;
+}
+
+.hero > *,
+.scan-layout > *,
+.contact-layout > *,
+.footer-grid > *,
+.field,
+.item-copy {
+  min-width: 0;
+}
+
+h1, h2, h3, p, li, .item-copy {
+  overflow-wrap: anywhere;
+}
+
+.chip {
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--teal);
+}
+
+.site-footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-sidebar > div:empty {
+  display: none;
+}
+
+.acknowledgement-card {
+  border: 0.125rem solid var(--teal);
+  border-radius: 0.25rem;
+  background: var(--pale);
+  padding: 1.25rem;
+}
+
+.acknowledgement-card h3 {
+  font-size: 1.35rem;
+  color: var(--teal);
+}
+
+.acknowledgement-card ul {
+  padding-left: 1.25rem;
+}
+
+.acknowledgement-card li {
+  margin-bottom: 0.5rem;
+}
+
+.submitted-message {
+  white-space: pre-wrap;
+}
+
+.field-error {
+  color: #a22222;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.field [aria-invalid="true"] {
+  border-color: #a22222;
+}
+
+.success-message {
+  color: var(--teal);
+  background: var(--pale);
+  border-left: 0.25rem solid var(--teal);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-form .field-legend {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.contact-form fieldset {
+  min-width: 0;
+}
+
+.field input[type="checkbox"],
+.field input[type="radio"] {
+  padding: 0;
+  accent-color: var(--teal);
+}
+
+.camera-status {
+  margin-bottom: 1rem;
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.additive-item {
+  flex-wrap: wrap;
+}
+
+.confirm-head,
+.camera-actions,
+.confirm-actions,
+.saved-list li {
+  flex-wrap: wrap;
+}
