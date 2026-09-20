@@ -22,7 +22,8 @@ function createForm() {
     reason: '',
     scanDate: '',
     topics: [],
-    replyMethod: 'email',
+    // response to feedback 1: Leave both radio buttons unselected when the form opens or resets.
+    replyMethod: '',
     message: '',
     consent: false,
   }
@@ -60,6 +61,9 @@ function submitForm() {
   }
   if (!form.value.reason) {
     errors.value.reason = 'Choose a reason for contacting us.'
+  }
+  if (form.value.replyMethod !== 'email' && form.value.replyMethod !== 'phone') {
+    errors.value.replyMethod = 'Choose how you would like us to reply.'
   }
   if (!form.value.message.trim()) {
     errors.value.message = 'Enter your question or feedback.'
@@ -214,6 +218,8 @@ function submitForm() {
               name="reply-method"
               value="email"
               required
+              :aria-invalid="Boolean(errors.replyMethod)"
+              aria-describedby="reply-method-error"
             >
             Email
           </label>
@@ -224,10 +230,15 @@ function submitForm() {
               name="reply-method"
               value="phone"
               required
+              :aria-invalid="Boolean(errors.replyMethod)"
+              aria-describedby="reply-method-error"
             >
             Phone
           </label>
         </div>
+        <p v-if="errors.replyMethod" id="reply-method-error" class="field-error">
+          {{ errors.replyMethod }}
+        </p>
       </fieldset>
 
       <div class="field">

@@ -1,5 +1,7 @@
 <script setup>
 import { ref, onUnmounted } from 'vue'
+// response to feedback 1: Add a second clear food-label photo while the camera is off.
+import scanImage from '../assets/scan-label.jpg'
 
 const video = ref(null)
 const cameraReady = ref(false)
@@ -64,6 +66,15 @@ onUnmounted(stopCamera)
       <div class="camera-panel">
         <div class="camera-frame">
           <video ref="video" id="camera-preview" autoplay playsinline muted></video>
+          <!-- https://www.pexels.com/photo/woman-choosing-frozen-product-in-supermarket-6097890/ -->
+          <img
+            v-if="!cameraReady"
+            class="camera-example"
+            :src="scanImage"
+            alt="A shopper checking the label on a packaged food container"
+            width="1600"
+            height="1067"
+          >
           <div v-if="!cameraReady" class="camera-overlay" id="camera-overlay">
             <p id="camera-status" role="status">{{ status }}</p>
             <button class="btn btn-primary" type="button" id="enable-camera" :disabled="openingCamera" @click="startCamera">Enable camera</button>

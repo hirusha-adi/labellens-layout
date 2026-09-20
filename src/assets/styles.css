@@ -361,6 +361,15 @@ p {
   object-fit: cover;
 }
 
+/* response to feedback 1: Keep the second photo inside the existing camera frame. */
+.camera-example {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* show this message until the camera starts */
 .camera-overlay {
   position: absolute;

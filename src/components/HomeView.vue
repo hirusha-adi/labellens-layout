@@ -1,5 +1,6 @@
 <script setup>
-import heroImage from '../assets/index-picture.png'
+// response to feedback 1: Replace the blurry hero with the clearer photo from the Task 1.1P plan.
+import heroImage from '../assets/shopper-label.png'
 
 function showResults() {
   window.location.hash = 'compare'
@@ -22,7 +23,8 @@ function showResults() {
         </div>
       </div>
       <div class="hero-visual">
-        <img :src="heroImage" alt="A shopper in a supermarket holding a phone beside a grocery trolley">
+        <!-- https://images.pexels.com/photos/6097889/pexels-photo-6097889.jpeg -->
+        <img :src="heroImage" alt="A shopper reading a food container label in a supermarket" width="1125" height="750">
       </div>
     </div>
   </section>
